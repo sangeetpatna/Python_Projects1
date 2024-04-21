@@ -15,7 +15,8 @@ while True:
     file.write("Client msg : ")
     file.write(cm)
     file.write("\n")
-    if sm=="Bye" or sm=="bye":
-        client.send(bytes("Bye","utf-8"))
+    if cm=="Bye" or cm=="bye":
+        sm=client.recv(1024).decode()
+        print("Server  : ",sm)
         break
 file.close()
